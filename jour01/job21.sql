@@ -1,7 +1,6 @@
 mysql> select count(*)
-    -> from etudiant
-    -> where age >= 18 and age <= 25
-    -> ;
+    -> FROM etudiant
+    -> WHERE AGE BETWEEN 18 AND 25;
 +----------+
 | count(*) |
 +----------+

@@ -1,8 +1,7 @@
-mysql> select avg(age) from etudiant
-    -> ;
+mysql> SELECT AVG(AGE) FROM etudiant;
 +----------+
-| avg(age) |
+| AVG(AGE) |
 +----------+
-|  24.4000 |
+|  23.8000 |
 +----------+
 1 row in set (0.00 sec)

@@ -1,17 +1,16 @@
-mysql> update etudiant
+mysql> UPDATE etudiant
     -> set age = 20
-    -> where nom = 'gertude'
+    -> where nom = 'Spaghetti'
     -> ;
-Query OK, 0 rows affected (0.00 sec)
-Rows matched: 1  Changed: 0  Warnings: 0
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
-mysql> select *
-    -> from etudiant
-    -> where nom = 'gertude'
+mysql> SELECT * FROM etudiant
+    -> WHERE nom = 'Spaghetti'
     -> ;
-+----+---------+--------+-----+---------------------------------+
-| id | nom     | prenom | age | email                           |
-+----+---------+--------+-----+---------------------------------+
-|  5 | Gertude | Dupuis |  20 | gertrude.dupuis@laplateforme.io |
-+----+---------+--------+-----+---------------------------------+
++----+-----------+--------+-----+---------------------------------+
+| ID | NOM       | PRENOM | AGE | EMAIL                           |
++----+-----------+--------+-----+---------------------------------+
+|  1 | Spaghetti | Betty  |  20 | betty.Spaghetti@laplateforme.io |
++----+-----------+--------+-----+---------------------------------+
 1 row in set (0.00 sec)
