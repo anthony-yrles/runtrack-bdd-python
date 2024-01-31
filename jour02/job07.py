@@ -8,21 +8,29 @@ mydb = mysql.connector.connect(
 )
 
 cursor = mydb.cursor()
-# cursor.execute("SELECT * FROM employe WHERE salaire > 3000")
-# results = cursor.fetchall()
-# cursor.close()
+cursor.execute("SELECT * FROM employe WHERE salaire > 3000")
+results = cursor.fetchall()
+cursor.close()
 
-# print(results)
+print(results)
 
-# cursor = mydb.cursor()
-# cursor.execute("SELECT * FROM employe INNER JOIN service ON employe.id_service = service.id")
-# results = cursor.fetchall()
-# cursor.close()
+cursor = mydb.cursor()
 
-# print(results)
+join = """
+    SELECT employe.nom, employe.prenom, service.nom
+    FROM employe 
+    INNER JOIN service ON employe.id_service = service.id
+"""
 
+cursor.execute(join)
+employe_service = cursor.fetchall()
 
-# mydb.close()
+for employes in employe_service:
+    nom, prenom, nom_service = employes
+
+    print(f"{nom} {prenom} travaille au service {nom_service}")
+
+mydb.close()
 
 class Employe:
     def __init__(self, db):
@@ -85,5 +93,3 @@ print(read)
 delete = employes.delete('nom = "Vanni"')
 read = employes.read('*')
 print(read)
-
-
